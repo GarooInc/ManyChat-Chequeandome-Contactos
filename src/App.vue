@@ -9,22 +9,17 @@
         form: {
           first_name: "",
           last_name: "",
-          phone: "",
-          whatsapp_phone: "",
-          email: "",
-          gender: "",
-          has_opt_in_sms: false,
-          has_opt_in_email: false,
-          consent_phrase: "Consents",
+          phone_number: "",
         },
       }
     },
     methods: {
       submitForm() {
         axios
-          .post("http://localhost:8080/fb/subscriber/createSubscriber", this.form, {
+          .post("https://chequeandome-prompt-garoo.koyeb.app/contact", this.form, {
             headers: {
               Authorization: "Bearer " + import.meta.env.VITE_MANYCHAT,
+              "Content-Type": "application/json",
             },
           })
           .then((response) => {
@@ -40,7 +35,7 @@
 
 <template>
   <header>
-    <img class="logo" src="../public/logo2.png" alt="logo" />
+    <img class="logo" src="/logo2.png" alt="logo" />
     <h1>Crear contacto</h1>
   </header>
 
@@ -57,7 +52,7 @@
       <div class="form-group">
         <label for="phone">Teléfono</label>
         <p class="note">Ingresar el código de área y sin guiones</p>
-        <input type="number" id="phone" placeholder="50763581615" v-model="form.whatsapp_phone"/>
+        <input type="number" id="phone" placeholder="50763581615" v-model="form.phone_number"/>
       </div>
       <button type="submit">Crear contacto</button>
     </form>
