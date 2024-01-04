@@ -43,11 +43,22 @@
     <img class="logo" src="../public/logo2.png" alt="logo" />
     <h1>Crear contacto</h1>
   </header>
+
   <main>
     <form v-on:submit.prevent="submitForm">
-      <input type="text" placeholder="Nombre" v-model="form.first_name" />
-      <input type="text" placeholder="Apellido" v-model="form.last_name"/>
-      <input type="number" placeholder="Teléfono" v-model="form.whatsapp_phone"/>
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" placeholder="Nombre" v-model="form.first_name" />
+      </div>
+      <div class="form-group">
+        <label for="lastname">Apellido</label>
+        <input type="text" id="lastname" placeholder="Apellido" v-model="form.last_name"/>
+      </div>
+      <div class="form-group">
+        <label for="phone">Teléfono</label>
+        <p class="note">Ingresar el código de área y sin guiones</p>
+        <input type="number" id="phone" placeholder="50763581615" v-model="form.whatsapp_phone"/>
+      </div>
       <button type="submit">Crear contacto</button>
     </form>
 
@@ -56,7 +67,7 @@
 
 <style scoped>
 * {
-  border: 1px dashed red;
+  //border: 1px dashed red;
 }
 
 header {
@@ -84,37 +95,70 @@ main {
   display: flex;
   flex-direction: column;
   place-items: center;
+
   height: 100%;
   width: 100%;
 
   padding: 2rem;
+
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: center;
   width: 100%;
 }
 
 input {
   width: 100%;
+
   padding: 1rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem 0;
+
   border-radius: 0.5rem;
   outline: none;
+  font-size: 16px;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.note {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  font-weight: lighter;
+  font-style: italic;
+  color: #484848;
 }
 
 button {
-  width: 100%;
+  width: min(100%, 768px);
+
   padding: 1rem;
   margin: 1rem 0;
+
   border-radius: 0.5rem;
   outline: none;
   background-color: #000;
   color: #fff;
   border: none;
   cursor: pointer;
+
+  font-size: 16px;
+  font-weight: bold;
 }
 
 button:hover {
@@ -125,7 +169,8 @@ button:hover {
 
 
 @media (max-width: 768px) {
-  header {
+  main {
+    padding: 1rem;
   }
 
   .logo {
