@@ -27,7 +27,7 @@
             console.log(response)
             this.$swal({
               title: "Contacto creado",
-              text: "El contacto se ha creado correctamente",
+              text: "El contacto se ha creado correctamente. Puede dirigirse a Manychat para empezar la conversación.",
               icon: "success",
               confirmButtonText: "Ok",
             })
