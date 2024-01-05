@@ -30,7 +30,7 @@ export default {
             })
           })
           .catch((error) => {
-            console.log(error.response.data.detail)
+            console.log(error)
             const det = error.response.data.detail ? error.response.data.detail : "Ha ocurrido un error al crear el contacto. " + error
             this.$swal({
               title: "Error",
