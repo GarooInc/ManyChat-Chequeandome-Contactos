@@ -1,5 +1,6 @@
 <script type="module">
   import axios from "axios"
+  import VueSweetalert2 from "vue-sweetalert2";
 
 
   export default {
@@ -24,9 +25,21 @@
           })
           .then((response) => {
             console.log(response)
+            this.$swal({
+              title: "Contacto creado",
+              text: "El contacto se ha creado correctamente",
+              icon: "success",
+              confirmButtonText: "Ok",
+            })
           })
           .catch((error) => {
             console.log(error)
+            this.$swal({
+              title: "Error",
+              text: "Ha ocurrido un error al crear el contacto. " + error,
+              icon: "error",
+              confirmButtonText: "Ok",
+            })
           })
       },
     }
