@@ -1,7 +1,5 @@
 <script type="module">
   import axios from "axios"
-  import VueSweetalert2 from "vue-sweetalert2";
-
 
   export default {
     name: "CreateContact",
