@@ -1,6 +1,5 @@
 <script setup>
-
-import CreateContact from "@/components/ContactForm.vue";
+  import CreateContact from "@/components/ContactForm.vue";
 </script>
 
 <template>
