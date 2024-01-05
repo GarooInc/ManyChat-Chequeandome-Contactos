@@ -17,7 +17,6 @@
         axios
           .post("https://chequeandome-prompt-garoo.koyeb.app/contact", this.form, {
             headers: {
-              Authorization: "Bearer " + import.meta.env.VITE_MANYCHAT,
               "Content-Type": "application/json",
             },
           })
